@@ -1,0 +1,156 @@
+/* =================
+   Table of Contents
+
+   1. Global Styles: Global styles for my project.
+
+   2. Layout: Styles related with layout, e.g. header, nav, main, section, footer, div, etc.
+
+   3. Typography: Styles related to text, e.g. h1, h2, p, etc.
+
+   4. Components: Styles related to components, e.g. buttons, etc.
+   ================= */
+
+/* =================
+   1. Global Styles
+   ================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* Primary */
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  /* Neutral */
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2em;
+  font-family: 'Karla', sans-serif;
+  background-color: var(--light-gray);
+  color: white;
+}
+
+/* =================
+   2. Layout
+   ================= */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  box-shadow: 0 0 20px 1px grey;
+  border-radius: 1em;
+}
+
+.section {
+  padding: 1.5em;
+}
+
+.section.section-join {
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  background-color: white;
+}
+
+.section.section-subscription {
+  background-color: var(--cyan);
+}
+
+.section.section-why-us {
+  background-color: hsl(179, 62%, 63%);
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
+/* =================
+   3. Typography
+   ================= */
+.section-join-title {
+  color: var(--cyan);
+  font-size: 1.5rem;
+}
+
+.section-join-sub-title {
+  color: var(--bright-yellow);
+  margin: 1em 0;
+  font-size: 1.1rem;
+}
+
+.section-join-description {
+  color: var(--grayish-blue);
+  line-height: 1.5em;
+}
+
+.section-subscription-price {
+  font-size: 2rem;
+  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+.section-subscription-price-span {
+  color: var(--light-gray);
+  font-size: 1rem;
+}
+
+.section-subscription-description {
+  color: var(--light-gray);
+}
+
+.section-why-us-list {
+  list-style: none;
+  margin-top: 1em;
+  color: var(--light-gray);
+}
+
+.section-why-us-list-item {
+  margin: 0.25em;
+}
+
+/* =================
+   4. Components
+   ================= */
+.section-subscription-sign-up-button {
+  width: 100%;
+  border-radius: 0.5em;
+  border: none;
+  padding: 1.25em;
+  margin-top: 3em;
+  background-color: var(--bright-yellow);
+  color: white;
+}
+
+@media (min-width: 700px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'join join' 'subscription why';
+    max-width: 40rem;
+    max-height: 28rem;
+  }
+
+  .section.section-join {
+    grid-area: join;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+  }
+
+  .section.section-subscription {
+    grid-area: subscription;
+    border-bottom-left-radius: 0.5em;
+  }
+
+  .section.section-why-us {
+    grid-area: why;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0.5em;
+  }
+}
